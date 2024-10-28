@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Tangerine:wght@400;700&display=swap');
+
+/*Paginas*/
+@import url('https://fonts.googleapis.com/css2?family=Meow+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Tangerine:wght@400;700&display=swap');
+
+*{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: 12px;
+    font-style: normal;
+    color: black;
+
+}
+.logo{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-size: 20px;
+    font-style: normal;
+}
+.autor-data{
+    font-family: sans-serif, cursive;
+    font-style: italic;
+    font-size: 13px;
+    color: #a0a0a0;
+}
+.card-title{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 1000;
+    font-size: 45px;
+    font-style: normal;
+    text-wrap: wrap;
+}
+.card-title2{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 30px;
+    font-style: normal;
+    text-wrap: wrap;
+}
+.card-text{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 22px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.categoria{
+    background-color: #f5f5f5;
+    color: #777777;
+    padding: 2px;   
+    font-size: 10px;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 229px;
+    gap: 10px;
+}
+.autor, .data{
+    margin-left: 7px;
+    margin-right: 7px;
+}
+.pags{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.paginas{
+    margin: 5px;
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    border: 1px solid #a0a0a0;
+    border-radius: 5px;
+    font-family: "Source Code Pro", monospace;
+    font-size: 13px;
+}
+.borda{
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 30px;
+}
+.banner1{
+    grid-column: 1/3;
+    grid-row: 1/3;
+    padding: 30px;
+}
+.banner2{
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+.banner3{
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+.banner4{
+    grid-column: 3/4;
+    grid-row: 3/4;
+}
+.banner5{
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+.banner6{
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+.banner7{
+    grid-column: 2/4;
+    grid-row: 4/6;
+    padding: 30px;
+}
+.banner8{
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
+.banner9{
+    grid-column: 1/2;
+    grid-row: 5/6;
+}
+.banner10{
+    grid-column: 1/2;
+    grid-row: 6/7;
+}
+.banner11{
+    grid-column: 2/3;
+    grid-row: 6/7;
+}
+.banner12{
+    grid-column: 3/4;
+    grid-row: 6/7;
+}
