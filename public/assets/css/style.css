@@ -33,14 +33,16 @@
     font-size: 45px;
     font-style: normal;
     text-wrap: wrap;
+    text-decoration: nome;
 }
 .card-title2{
     font-family: "Plus Jakarta Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 800;
-    font-size: 30px;
+    font-size: 21px;
     font-style: normal;
     text-wrap: wrap;
+    text-decoration: nome;
 }
 .card-text{
     font-family:Georgia, 'Times New Roman', Times, serif;
@@ -134,4 +136,38 @@
 .banner12{
     grid-column: 3/4;
     grid-row: 6/7;
+}
+
+
+/* ESTILO DA PÁGINA criarPost */
+
+.caixapost{
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.formpost{
+    height: 50vh;
+}
+
+/* ESTILO DA PÁGINA login */
+
+.login{
+    height: 100vh;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.formlogin{
+    width: 400px;
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.imglogin{
+    display: flex;
+    justify-content: center;
 }
