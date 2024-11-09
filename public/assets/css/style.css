@@ -4,6 +4,8 @@
 /*Paginas*/
 @import url('https://fonts.googleapis.com/css2?family=Meow+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Tangerine:wght@400;700&display=swap');
 
+/*DEFINIÇÕES PADRÃO*/
+
 *{
     font-family: "Plus Jakarta Sans", sans-serif;
     font-optical-sizing: auto;
@@ -11,38 +13,19 @@
     font-size: 12px;
     font-style: normal;
     color: black;
-
 }
-.logo{
+.card-title, .card-title2, .logo{
     font-family: "Plus Jakarta Sans", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 700;
-    font-size: 20px;
     font-style: normal;
-}
-.autor-data{
-    font-family: sans-serif, cursive;
-    font-style: italic;
-    font-size: 13px;
-    color: #a0a0a0;
 }
 .card-title{
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 1000;
     font-size: 45px;
-    font-style: normal;
-    text-wrap: wrap;
-    text-decoration: nome;
 }
 .card-title2{
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 800;
     font-size: 21px;
-    font-style: normal;
-    text-wrap: wrap;
-    text-decoration: nome;
 }
 .card-text{
     font-family:Georgia, 'Times New Roman', Times, serif;
@@ -50,17 +33,11 @@
     margin-top: 15px;
     margin-bottom: 15px;
 }
-.categoria{
-    background-color: #f5f5f5;
-    color: #777777;
-    padding: 2px;   
-    font-size: 10px;
-}
-.cards{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 229px;
-    gap: 10px;
+.autor-data{
+    font-family: sans-serif, cursive;
+    font-style: italic;
+    font-size: 13px;
+    color: #a0a0a0;
 }
 .autor, .data{
     margin-left: 7px;
@@ -77,7 +54,7 @@
     text-decoration: none;
     color: black;
     padding: 5px;
-    border: 1px solid #a0a0a0;
+    border: 1px solid #777777;
     border-radius: 5px;
     font-family: "Source Code Pro", monospace;
     font-size: 13px;
@@ -87,72 +64,19 @@
     border-radius: 5px;
     padding: 30px;
 }
-.banner1{
-    grid-column: 1/3;
-    grid-row: 1/3;
-    padding: 30px;
-}
-.banner2{
-    grid-column: 3/4;
-    grid-row: 1/2;
-}
-.banner3{
-    grid-column: 3/4;
-    grid-row: 2/3;
-}
-.banner4{
-    grid-column: 3/4;
-    grid-row: 3/4;
-}
-.banner5{
-    grid-column: 2/3;
-    grid-row: 3/4;
-}
-.banner6{
-    grid-column: 1/2;
-    grid-row: 3/4;
-}
-.banner7{
-    grid-column: 2/4;
-    grid-row: 4/6;
-    padding: 30px;
-}
-.banner8{
-    grid-column: 1/2;
-    grid-row: 4/5;
-}
-.banner9{
-    grid-column: 1/2;
-    grid-row: 5/6;
-}
-.banner10{
-    grid-column: 1/2;
-    grid-row: 6/7;
-}
-.banner11{
-    grid-column: 2/3;
-    grid-row: 6/7;
-}
-.banner12{
-    grid-column: 3/4;
-    grid-row: 6/7;
-}
+.logo{
+    font-weight: 700;
+    font-size: 20px;
 
-
-/* ESTILO DA PÁGINA criarPost */
-
-.caixapost{
-    height: 75vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
-.formpost{
-    height: 50vh;
+.categoria{
+    background-color: #f5f5f5;
+    color: #777777;
+    padding: 2px;   
+    font-size: 10px;
 }
 
 /* ESTILO DA PÁGINA login */
-
 .login{
     height: 100vh;
     max-width: 400px;
@@ -170,4 +94,75 @@
 .imglogin{
     display: flex;
     justify-content: center;
+}
+@media (min-width: 770px){
+
+    .cards{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 229px;
+        gap: 10px;
+    }
+    
+    .body-content{
+        padding: 30px;
+    }
+
+    /*DIFININDO POSIÇÃO DE CADA CARD*/
+    .banner1{
+        grid-column: 1/3;
+        grid-row: 1/3;
+        padding: 30px;
+    }
+    .banner2{
+        grid-column: 3/4;
+        grid-row: 1/2;
+    }
+    .banner3{
+        grid-column: 3/4;
+        grid-row: 2/3;
+    }
+    .banner4{
+        grid-column: 3/4;
+        grid-row: 3/4;
+    }
+    .banner5{
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
+    .banner6{
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+    .banner7{
+        grid-column: 2/4;
+        grid-row: 4/6;
+        padding: 30px;
+    }
+    .banner8{
+        grid-column: 1/2;
+        grid-row: 4/5;
+    }
+    .banner9{
+        grid-column: 1/2;
+        grid-row: 5/6;
+    }
+    .banner10{
+        grid-column: 1/2;
+        grid-row: 6/7;
+    }
+    .banner11{
+        grid-column: 2/3;
+        grid-row: 6/7;
+    }
+    .banner12{
+        grid-column: 3/4;
+        grid-row: 6/7;
+    }
+}
+
+@media (min-width : 500px) and (max-width: 770){
+    .cards{
+        display: flex;
+    }
 }

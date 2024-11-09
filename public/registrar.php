@@ -51,6 +51,7 @@
                                     $consulta = mysqli_query($conexao, "INSERT INTO usuario (nome, email, senha) VALUE ('$nome', '$email', '$senha');");
 
                                     echo "Cadastro feito com sucesso!";
+                                    header("Location: index.php");
 
                                 } else {
                                     echo "Senhas não conferem!";
