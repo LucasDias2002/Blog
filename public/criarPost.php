@@ -19,6 +19,7 @@
     include("../app/protect.php");
 
     ProtegerPagina();
+    ApenasAdmin();
 
     if (isset($_POST['titulo'])) {
         $titulo = $_POST['titulo'];
@@ -42,34 +43,36 @@
 
     <div class="container d-flex justify-content-center align-items-center text-center">
         
-        <div class="post-box borda mt-5 mb-5" style="height: 57vh;">
-            <h3>Adicionar uma postagem</h3>
-            <form class="formpost d-flex flex-column  align-items-center" method="POST">
-                <div>
-                    <label for="titulo">Digite um título: </label><br>
-                    <textarea type="text" name="titulo" style="height: 50px;width: 600px; " rows="100" ></textarea>
+        <div class="row">
+            <div class="borda mt-5 mb-5" style="height: 70vh;">
+                <h3>Adicionar uma postagem</h3>
+                <form class="formpost d-flex flex-column align-items-center" method="POST">
+                    <div>
+                        <label for="titulo">Digite um título: </label><br>
+                        <textarea type="text" name="titulo" rows="4" cols="50" ></textarea>
+                        <hr>
+                        <label for="categoria">Selecione uma categoria</label><br>
+                        <select name="categoria">
+                            <option value="MODA">Moda</option>
+                            <option value="CULINÁRIA">Culinária</option>
+                            <option value="VIAGENS">Viagens</option>
+                            <option value="TECNOLOGIA">Tecnologia</option>
+                            <option value="ESPORTE">Esporte</option>
+                            <option value="BELEZA">Beleza</option>
+                            <option value="SAÚDE e BEM-ESTAR">Saúde e Bem-estar</option>
+                            <option value="FINANÇAS PESSOAIS">Finanças Pessoais</option>
+                            <option value="MARKETING E NEGÓCIOS">Marketing e Negócios</option>
+                            <option value="DESENVOLVIMENTO PESSOAL">Desenvolvimento Pessoal</option>
+                            <option value="ENTRETENIMENTO">Entretenimento</option>
+                        </select>
+                        <hr>
+                        <label for="conteudo">Digite o conteúdo: </label><br>
+                        <textarea rows="17" cols="50" type="text" name="conteudo"></textarea>
+                    </div>
                     <hr>
-                    <label for="categoria">Selecione uma categoria</label><br>
-                    <select name="categoria">
-                        <option value="MODA">Moda</option>
-                        <option value="CULINÁRIA">Culinária</option>
-                        <option value="VIAGENS">Viagens</option>
-                        <option value="TECNOLOGIA">Tecnologia</option>
-                        <option value="ESPORTE">Esporte</option>
-                        <option value="BELEZA">Beleza</option>
-                        <option value="SAÚDE e BEM-ESTAR">Saúde e Bem-estar</option>
-                        <option value="FINANÇAS PESSOAIS">Finanças Pessoais</option>
-                        <option value="MARKETING E NEGÓCIOS">Marketing e Negócios</option>
-                        <option value="DESENVOLVIMENTO PESSOAL">Desenvolvimento Pessoal</option>
-                        <option value="ENTRETENIMENTO">Entretenimento</option>
-                    </select>
-                    <hr>
-                    <label for="conteudo">Digite o conteúdo: </label><br>
-                    <input style="height: 200px;width: 600px" type="text" name="conteudo">
-                </div>
-                <hr>
-                <input style="width: 150px;height:40px;" class="btn btn-dark" type="submit" value="Criar Postagem">
-            </form>
+                    <input style="width: 150px;height:40px;" class="btn btn-dark" type="submit" value="Criar Postagem">
+                </form>
+            </div>
         </div>
     </div>
     
