@@ -1,3 +1,10 @@
+/*---------------------------------------------------------------------------------------------------
+Todas as contas incluindo a de ADMIN foram criadas com a 
+senha: 12345
+usadas para efetuar os testes
+-----------------------------------------------------------------------------------------------------*/
+
+
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
