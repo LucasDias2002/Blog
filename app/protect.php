@@ -17,7 +17,7 @@ if (!function_exists("ApenasAdmin")) {
         if (!isset($_SESSION))
             session_start();
 
-        if (!isset($_SESSION['usuario']) || !is_numeric($_SESSION['usuario']) || $_SESSION <> 1)
+        if (!isset($_SESSION['usuario']) || !is_numeric($_SESSION['usuario']) || $_SESSION['usuario'] <> 1)
             header("Location: ../public/index.php");
     }
 }

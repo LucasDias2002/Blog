@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div><?php include 'cabecalho.php'; ?></div>
+    <div><?php include 'header.php'; ?></div>
     <div class="container">
         <div class="m-5">
             <?php
@@ -17,25 +17,25 @@
             ProtegerPagina();
 
             if (!isset($_GET['post'])) {
-                echo "Não existe postagem!";
+                echo "Not exist posts!";
             } else {
-                include_once '../app/database/db.php';
+                include_once '../app/database/connection.php';
                 $id = $_GET['post'];
-                $consulta = mysqli_query($conexao, "SELECT * FROM postagem WHERE id = $id");
+                $consulta = mysqli_query($conexao, "SELECT * FROM post WHERE id = $id");
 
                 $sql = mysqli_fetch_assoc($consulta);
 
-                $titulo = $sql['titulo'];
-                $conteudo = $sql['conteudo'];
+                $titulo = $sql['title'];
+                $conteudo = $sql['content'];
                 $autor = $sql['autor'];
-                $data =  date("d/m/Y", strtotime($sql['data_postagem']));
+                $data =  date("d/m/Y", strtotime($sql['date_post']));
                 echo "
                         <div class='row justify-content-center'> 
                        
                              <div class='col-xl-8'>
                                 <h5 class='card-title mt-3 mb-2 lh-base'>$titulo</h5>
                                  <p class='autor-data text-end mb-5'>by <span class='autor'>$autor</span> on <span class='data'>$data</span></p>
-                                <p class='fs-3 text lh-lg'>$conteudo</p>
+                                <p class='fs-4 text fw-light lh-lg'>$conteudo</p>
                             </div>
                         </div>
                     ";

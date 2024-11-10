@@ -11,64 +11,65 @@
 </head>
 
 <body>
-    <?php
-        include_once("cabecalho.php");
-    ?>
+    <div><?php include 'header.php'; ?></div>
+
     <div class="container login">
         <form class="borda formlogin" method="POST">
             <div class="imglogin"><img class="mb-4" src="../public/assets/img/favicon/android-chrome-512x512.png" alt="" width="100" height="100"></div>
             <h1 class="h3 mb-3 fw-normal">Efetuar login:</h1>
 
             <div class="form-floating">
-                <input type="email" class="form-control" name = "email" id="floatingInput" placeholder="name@example.com">
+                <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com">
                 <label for="floatingInput">Email</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" name="senha" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Senha</label>
+                <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
             </div>
 
-            <button class="btn btn-dark w-100 py-2" type="submit">Entrar</button>
+            <div class="d-flex gap-2">
+                <a class="btn btn-dark w-100 py-2" href="registrar.php">Register</a>
+                <button class="btn btn-success w-100 py-2" type="submit">Sign in</button>
+            </div>
 
-            <p class="mensangem"><?php
-                include_once("../app/database/db.php");
+            <p class="mensangem">
+                <?php
+                include_once("../app/database/connection.php");
 
-                if(!isset($_SESSION))
+                if (!isset($_SESSION))
                     session_start();
-                
-                if(isset($_POST['email'])){
-                    if(strlen($_POST['senha']) > 0 && strlen($_POST['email'] > 0)){
-                        
-                        $email = mysqli_real_escape_string($conexao, $_POST['email']);
-                        $senha = mysqli_real_escape_string($conexao, ($_POST['senha']));
 
-                        $query = "SELECT * FROM usuario WHERE usuario.email = '$email'";
+                if (isset($_POST['email'])) {
+                    if (strlen($_POST['password']) > 0 && strlen($_POST['email'] > 0)) {
+
+                        $email = mysqli_real_escape_string($conexao, $_POST['email']);
+                        $senha = mysqli_real_escape_string($conexao, $_POST['password']);
+
+                        $query = "SELECT * FROM user WHERE user.email = '$email'";
 
                         $consulta = mysqli_query($conexao, $query);
-                        
-                        $usuario = mysqli_fetch_assoc($consulta);
 
-                        $_SESSION['usuario'] = $usuario['id'];
+                        if ($consulta->num_rows > 0) {
+                            $usuario = mysqli_fetch_assoc($consulta);
 
-                        if($usuario <> null && password_verify($senha, $usuario['senha'])){
-                            echo "Login efetuado com sucesso!";
-                            header("Location: index.php");
+                            $_SESSION['usuario'] = $usuario['id'];
+
+                            if ($usuario <> null && password_verify($senha, $usuario['password'])) {
+                                echo "Login successfully!";
+                                header("Location: index.php");
+                            } else
+                                echo "Email or password no match!";
+                        } else {
+                            echo "Email or password no match!";
                         }
-                        else{
-                            echo "Email ou senha não conferem!";
-                        }
-                        
                     }
                 }
-            ?></p>
+                ?></p>
 
             <p class="mt-5 mb-3 text-body-secondary">© 2024</p>
         </form>
     </div>
-
-    <?php
-        include_once("footer.php");
-    ?>
+    <div><?php include 'footer.php'; ?></div>
 </body>
 
 </html>

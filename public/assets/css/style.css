@@ -27,12 +27,6 @@
     font-weight: 800;
     font-size: 21px;
 }
-.card-text{
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    font-size: 22px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
 .autor-data{
     font-family: sans-serif, cursive;
     font-style: italic;
@@ -158,11 +152,5 @@
     .banner12{
         grid-column: 3/4;
         grid-row: 6/7;
-    }
-}
-
-@media (min-width : 500px) and (max-width: 770){
-    .cards{
-        display: flex;
     }
 }

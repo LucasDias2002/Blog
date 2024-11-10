@@ -9,23 +9,23 @@
     </head>
 
     <body>
-        <div><?php include 'cabecalho.php'; ?></div>
+        <div><?php include 'header.php'; ?></div>
         <div class="container cards">
             <?php
             include("../app/protect.php");
 
             ProtegerPagina();
-            include_once '../app/database/db.php';
+            include_once '../app/database/connection.php';
 
             $pagina = isset($_GET['page']) ? $_GET['page'] : 0;
 
             $inicio = $pagina * 12;
 
             //Puxei as postagens do banco de dados
-            $postagens = mysqli_query($conexao, "SELECT * FROM postagem ORDER BY data_postagem DESC LIMIT $inicio, 12;");
+            $postagens = mysqli_query($conexao, "SELECT * FROM post ORDER BY date_post DESC LIMIT $inicio, 12;");
 
             //Puxando a quantidade de postagens
-            $qtspaginas = mysqli_query($conexao, "SELECT COUNT(id) FROM postagem;");
+            $qtspaginas = mysqli_query($conexao, "SELECT COUNT(id) FROM post;");
 
             //Tranformando em um array associativo
             $qts = mysqli_fetch_assoc($qtspaginas);
@@ -43,33 +43,33 @@
                     $postagem = mysqli_fetch_assoc($postagens);
                     $class = 'banner' . $numPostagem;
                     $autor = $postagem['autor'];
-                    $titulo = substr($postagem['titulo'],0, 70);
-                    $categoria = $postagem['categoria'];
-                    $conteudo = substr($postagem['conteudo'], 0, 150) . "...";
-                    $data = date("d/m/Y", strtotime($postagem['data_postagem']));
+                    $titulo = substr($postagem['title'],0, 70);
+                    $categoria = strtoupper($postagem['category']);
+                    $conteudo = substr($postagem['content'], 0, 150) . "...";
+                    $data = date("d/m/Y", strtotime($postagem['date_post']));
                     $id = $postagem['id'];
 
 
                     if ($numPostagem == 1 || $numPostagem == 7) {
                         print "
-                            <div class='$class'>
+                            <div class='$class d-flex flex-column'>
                                 <div class='header-card'>
                                     <p class='autor-data'>by <span class='autor'>$autor</span> on <span class='data'>$data</span></p>
                                 </div>
-                                <div class='card-body'>
-                                    <h5><a class='card-title mt-3 mb-3 text-decoration-none' href='postagem.php?post=$id'>$titulo</a></h5>
-                                    <span class='categoria'>$categoria</span>
-                                    <p class='card-text'>$conteudo</p>
+                                <div class='card-body justify-content-evenly d-flex flex-column'>
+                                    <h5><a class='card-title mt-3 mb-3 text-decoration-none' href='post.php?post=$id'>$titulo</a></h5>
+                                    <div><span class='categoria p-2'>$categoria</span></div>
+                                    <p class='fs-3 text fw-light lh-lg'>$conteudo</p>
                                 </div>
                             </div>";
                         $numPostagem++;
                     } else {
                         print "
-                            <div class='$class borda'>
+                            <div class='$class borda d-flex flex-column'>
                                 <p class='titulo'><span class='autor'><span class='autor-data'>by </span> $autor</span></p>
-                                <div class='card-body'>
-                                <h5><a class='card-title2 text-decoration-none text-dark' href='postagem.php?post=$id''>$titulo</a></h5>
-                                <span class='categoria'>$categoria</span>
+                                <div class='card-body justify-content-around d-flex flex-column'>
+                                <h5><a class='card-title2 text-decoration-none text-dark' href='post.php?post=$id''>$titulo</a></h5>
+                                <div><span class='categoria p-2'>$categoria</span></div>
                             </div>
                         </div>";
                         $numPostagem++;
