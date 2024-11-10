@@ -8,6 +8,7 @@ Este é um projeto de blog desenvolvido em PHP que implementa funcionalidades co
 - [Funcionalidades](#funcionalidades)
 - [Instalação](#instalação)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Imagens do projeto](#imagens-do-projeto)
 
 ## Visão Geral
 
@@ -37,3 +38,18 @@ Este blog em PHP foi desenvolvido com o objetivo de facilitar a criação e gest
 1. **PHP**: Linguagem principal para a lógica do servidor e manipulação do banco de dados.
 2. **MySQL**: Banco de dados relacional para armazenar as informações das postagens.**
 3. **HTML/CSS**: Estrutura e estilo das páginas.
+
+## Imagens do projeto
+1. *Página Login*
+<img src="docs/login.png">
+2. *Página Cadastro*
+<img src="docs/register.png">
+3. *Página Inicial*
+<img src="docs/index.png">
+4. *Página Post Detalhada*
+<img src="docs/post.png">
+5. *Página de Criar e Editar Post são similares*
+<img src="docs/update-post.png">
+6. *Página de Gerenciar Posts*
+<img src="docs/managerposts.png">
+<h1 align="center">Obrigado</h1>
